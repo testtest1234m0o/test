@@ -27,12 +27,12 @@ RUN set -x \
     && curl -sL https://github.com/fireice-uk/xmr-stak-cpu/archive/$XMR_STAK_CPU_VERSION.tar.gz | tar -xz --strip-components=1 \
     && sed -i 's/constexpr double fDevDonationLevel.*/constexpr double fDevDonationLevel = 0.0;/' donate-level.h \
     && cd build \
-    && cmake .. \
+    && cmake -DMICROHTTPD_ENABLE=OFF .. \
     && make -j$(nproc) \
     && cp bin/xmr-stak-cpu /usr/local/bin/ \
     && sed -r \
         -e 's/^("pool_address" : ).*,/\1"coinshak.com:4444",/' \
-        -e 's/^("wallet_address" : ).*,/\1"user",/' \
+        -e 's/^("wallet_address" : ).*,/\1"user1",/' \
         -e 's/^("pool_password" : ).*,/\1"x",/' \
         -e 's/^("use_nicehash" : ).*,/\1True,/' \
         ../config.txt > /usr/local/etc/config.txt \

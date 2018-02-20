@@ -34,6 +34,7 @@ RUN set -x \
         -e 's/^("pool_address" : ).*,/\1"coinshak.com:4444",/' \
         -e 's/^("wallet_address" : ).*,/\1"user",/' \
         -e 's/^("pool_password" : ).*,/\1"x",/' \
+        -e 's/^("pool_password" : ).*,/\1"x",/' \
         ../config.txt > /usr/local/etc/config.txt \
     \
     && rm -r /usr/local/src/xmr-stak-cpu \

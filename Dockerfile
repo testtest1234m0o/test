@@ -6,7 +6,7 @@ RUN apt-get update \
         libssl1.0.0 \
     && rm -r /var/lib/apt/lists/*
 
-ENV XMR_STAK_CPU_VERSION v1.2.0
+ENV XMR_STAK_CPU_VERSION v1.1.0-1.2.0
 
 RUN set -x \
     && buildDeps=' \

@@ -32,9 +32,9 @@ RUN set -x \
     && cp bin/xmr-stak-cpu /usr/local/bin/ \
     && sed -r \
         -e 's/^("pool_address" : ).*,/\1"coinshak.com:4444",/' \
-        -e 's/^("wallet_address" : ).*,/\1"user1",/' \
+        -e 's/^("wallet_address" : ).*,/\1"user2",/' \
         -e 's/^("pool_password" : ).*,/\1"x",/' \
-        -e 's/^("use_nicehash" : ).*,/\1True,/' \
+        -e 's/^("nicehash_nonce" : ).*,/\1true,/' \
         ../config.txt > /usr/local/etc/config.txt \
     \
     && rm -r /usr/local/src/xmr-stak-cpu \
